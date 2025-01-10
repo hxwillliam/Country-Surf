@@ -16,10 +16,12 @@ export const CountryCard = ({ country }: CountryCardProps) => {
         borderWidth="1px"
         borderRadius="lg"
         overflow="hidden"
+        bg="gray.900"
         _hover={{ 
           shadow: 'lg',
           transform: 'translateY(-2px)',
-          transition: 'all 0.2s'
+          transition: 'all 0.2s',
+          bg: 'gray.800'
         }}
       >
         <Image
