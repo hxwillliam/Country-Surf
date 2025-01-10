@@ -6,7 +6,7 @@ export const Header = () => {
     <Box as="nav" bg="teal.500" py={4} color="white">
       <Container maxW="container.xl">
         <Link as={RouterLink} href="/" _hover={{ textDecoration: 'none' }}>
-          <Heading size="lg">Country Explorer</Heading>
+          <Heading size="lg">Country Surf with William</Heading>
         </Link>
       </Container>
     </Box>
