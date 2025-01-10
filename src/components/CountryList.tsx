@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { SimpleGrid, Spinner, Center, Text } from '@chakra-ui/react'
+import {Box,Container,SimpleGrid,Spinner,Center,Text,Heading} from '@chakra-ui/react'
 import { country } from '../types/country'
 import { getAllCountries } from '../services/api'
 import { CountryCard } from './CountryCard'
@@ -42,10 +42,17 @@ export const CountryList = () => {
   }
 
   return (
-    <SimpleGrid columns={[1, 2, 3, 4]} >
-      {countries.map((country) => (
-        <CountryCard key={country.name.common} country={country} />
-      ))}
-    </SimpleGrid>
+    <Container maxW="container.xl" my={8}>
+      <Heading as="h2" size="lg" mb={6} textAlign="center">
+        Browse Countries
+      </Heading>
+      <SimpleGrid columns={[1, 2, 3, 4]} gap={6}>
+        {countries.map((country) => (
+          <Box key={country.name.common} className="fade-in">
+            <CountryCard country={country} />
+          </Box>
+        ))}
+      </SimpleGrid>
+    </Container>
   )
 }
