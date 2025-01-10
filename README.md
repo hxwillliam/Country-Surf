@@ -20,6 +20,7 @@ Installare le Dipendenze
 Avviare l'Applicazione
 ```npm run dev```
 
+
 Struttura del Progetto
 src/
 ├── components/
@@ -35,6 +36,9 @@ src/
 ├── services/
 │   └── api.ts
 │
+├── hooks/
+│   └── useCountryDetails.ts
+│
 ├── types/
 │   └── country.ts
 │
@@ -48,3 +52,4 @@ CountryList: Gestisce e visualizza la lista di paesi.
 CountryDetails: Mostra i dettagli completi di un singolo paese.
 Header: Barra con titolo.
 Layout: Layout principale che contiene Header e contenuto.
+useCountryDetails: Custom hook per la gestione del fetch e dello stato dei dettagli di un singolo paese.
