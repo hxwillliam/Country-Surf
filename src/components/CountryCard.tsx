@@ -1,4 +1,4 @@
-import { Box, Image, Text, VStack, Link } from '@chakra-ui/react'
+import { Box, Image, Text, VStack } from '@chakra-ui/react'
 import { Link as RouterLink } from 'react-router-dom'
 import { country } from '../types/country'
 
@@ -8,17 +8,20 @@ interface CountryCardProps {
 
 export const CountryCard = ({ country }: CountryCardProps) => {
   return (
-    <Link
-      as={RouterLink}
-      href={`/country/${country.name.common}`}
+    <RouterLink
+      to={`/country/${country.name.common}`}
       style={{ textDecoration: 'none' }}
     >
-      <Box
-        borderWidth="1px"
-        borderRadius="lg"
-        overflow="hidden"
-        _hover={{ shadow: 'md' }}
-      >
+    <Box
+      borderWidth="1px"
+      borderRadius="lg"
+      overflow="hidden"
+      _hover={{ 
+        shadow: 'lg',
+        transform: 'translateY(-2px)',
+        transition: 'all 0.2s'
+      }}
+    >
       <Image
         src={country.flags.svg}
         alt={`Flag of ${country.name.common}`}
@@ -27,9 +30,9 @@ export const CountryCard = ({ country }: CountryCardProps) => {
         objectFit="cover"
       />
       <VStack p={4} align="start">
-        <Text>Population: {country.population.toLocaleString()}</Text>
+        <Text><strong>Population:</strong> {country.population.toLocaleString()}</Text>
       </VStack>
     </Box>
-    </Link>
+    </RouterLink>
   )
 }
